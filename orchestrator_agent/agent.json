@@ -1,0 +1,35 @@
+{
+    "name": "orchestrator_agent",
+    "description": "A project management AI assistant that coordinates tasks, calendar, and notes by delegating to specialized sub-agents via A2A.",
+    "defaultInputModes": ["text/plain"],
+    "defaultOutputModes": ["application/json"],
+    "skills": [
+        {
+            "id": "task_coordination",
+            "name": "Task Coordination",
+            "description": "Delegate task management operations (create, list, update, delete, semantic search, smart filter, summaries) to the Task Manager Agent.",
+            "tags": ["task management", "delegation"]
+        },
+        {
+            "id": "calendar_management",
+            "name": "Calendar Management",
+            "description": "Delegate calendar operations (create events, list events, find free slots, delete events) to the Calendar Agent.",
+            "tags": ["calendar", "scheduling"]
+        },
+        {
+            "id": "notes_management",
+            "name": "Notes Management",
+            "description": "Delegate note operations (save, read, list, search notes) to the Notes Agent.",
+            "tags": ["notes", "knowledge"]
+        },
+        {
+            "id": "multi_step_workflows",
+            "name": "Multi-Step Workflows",
+            "description": "Orchestrate complex requests across multiple agents, such as daily briefings, meeting follow-ups, and end-of-day wrap-ups.",
+            "tags": ["orchestration", "workflow"]
+        }
+    ],
+    "url": "https://orchestrator-agent-Replace.Replace.run.app/a2a/orchestrator_agent",
+    "capabilities": {},
+    "version": "1.0.0"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "notes_agent",
+    "description": "A notes and knowledge management agent. Can save meeting notes, search through existing notes, read note files, and list all saved notes. Uses Google Cloud Storage for persistent storage.",
+    "defaultInputModes": ["text/plain"],
+    "defaultOutputModes": ["application/json"],
+    "skills": [
+        {
+            "id": "save_note",
+            "name": "Save Note",
+            "description": "Save a note as a markdown file in cloud storage with descriptive filename and formatted content.",
+            "tags": ["notes", "save", "markdown"]
+        },
+        {
+            "id": "read_note",
+            "name": "Read Note",
+            "description": "Read the contents of a specific note file from cloud storage.",
+            "tags": ["notes", "read"]
+        },
+        {
+            "id": "list_notes",
+            "name": "List Notes",
+            "description": "List all saved notes in cloud storage sorted by last modified time.",
+            "tags": ["notes", "list"]
+        },
+        {
+            "id": "search_notes",
+            "name": "Search Notes",
+            "description": "Search through note contents for specific text with matching excerpts.",
+            "tags": ["notes", "search"]
+        }
+    ],
+    "url": "https://notes-agent-Replace.Replace.run.app/a2a/notes_agent",
+    "capabilities": {},
+    "version": "1.0.0"
+}

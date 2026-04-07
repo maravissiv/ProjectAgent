@@ -1,0 +1,76 @@
+{
+    "name": "calendar_agent",
+    "description": "A calendar and scheduling agent backed by Firestore for persistent storage. Manages events, checks availability, and finds free time slots.",
+    "defaultInputModes": ["text/plain"],
+    "defaultOutputModes": ["text/plain"],
+    "skills": [
+        {
+            "id": "list_events",
+            "name": "List Events",
+            "description": "List calendar events with optional date filtering. Supports specific dates and date ranges.",
+            "tags": ["calendar", "events", "read"],
+            "examples": [
+                "What's on my calendar today?",
+                "Show me this week's meetings",
+                "List all events for tomorrow"
+            ]
+        },
+        {
+            "id": "search_events",
+            "name": "Search Events",
+            "description": "Search calendar events by text query across titles and descriptions.",
+            "tags": ["calendar", "search"],
+            "examples": [
+                "Find the client meeting",
+                "Search for sprint planning"
+            ]
+        },
+        {
+            "id": "create_event",
+            "name": "Create Event",
+            "description": "Create a new calendar event with title, date, start/end time, attendees, and description.",
+            "tags": ["calendar", "events", "write"],
+            "examples": [
+                "Schedule a meeting with Ankit tomorrow at 2pm",
+                "Create a 1-hour design review on Friday at 11am"
+            ]
+        },
+        {
+            "id": "update_event",
+            "name": "Update Event",
+            "description": "Update an existing calendar event's details by event_id. Supports partial updates.",
+            "tags": ["calendar", "events", "write"],
+            "examples": [
+                "Move the standup to 10am",
+                "Add Meera to tomorrow's design review"
+            ]
+        },
+        {
+            "id": "delete_event",
+            "name": "Delete Event",
+            "description": "Delete a calendar event by its event_id.",
+            "tags": ["calendar", "events", "write"],
+            "examples": [
+                "Cancel the Friday meeting",
+                "Remove the duplicate standup event"
+            ]
+        },
+        {
+            "id": "find_free_slots",
+            "name": "Find Free Slots",
+            "description": "Find available time slots on a given date within 09:00-17:00 work hours.",
+            "tags": ["calendar", "availability", "scheduling"],
+            "examples": [
+                "When am I free tomorrow?",
+                "Find a 1-hour slot this week for a review",
+                "Check availability for a team meeting"
+            ]
+        }
+    ],
+    "capabilities": {
+        "streaming": false,
+        "pushNotifications": false
+    },
+    "url": "https://calendar-agent-Replace.Replace.run.app/a2a/calendar_agent",
+    "version": "1.0.0"
+}

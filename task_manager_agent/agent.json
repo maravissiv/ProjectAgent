@@ -1,0 +1,35 @@
+{
+    "name": "task_manager_agent",
+    "description": "A task management agent backed by AlloyDB with AI capabilities. Can create, list, update, and delete tasks. Also supports semantic search, smart filtering, and AI-generated task summaries.",
+    "defaultInputModes": ["text/plain"],
+    "defaultOutputModes": ["application/json"],
+    "skills": [
+        {
+            "id": "task_crud",
+            "name": "Task CRUD Operations",
+            "description": "Create, list, update, and delete project tasks with fields like title, description, assignee, priority, due date, and tags.",
+            "tags": ["task management", "CRUD"]
+        },
+        {
+            "id": "semantic_search",
+            "name": "Semantic Task Search",
+            "description": "Find tasks by meaning using vector embeddings in AlloyDB. Use for natural language queries like 'checkout work' or 'client deliverables'.",
+            "tags": ["search", "AI", "embeddings"]
+        },
+        {
+            "id": "smart_filter",
+            "name": "Smart Task Filtering",
+            "description": "Filter tasks using AI-evaluated conditions for complex questions like 'which tasks are at risk?' or 'frontend-related work'.",
+            "tags": ["filter", "AI"]
+        },
+        {
+            "id": "task_summary",
+            "name": "AI Task Summary",
+            "description": "Generate standup-style summaries and status reports from tasks using AI.",
+            "tags": ["summary", "AI", "reporting"]
+        }
+    ],
+    "url": "https://task-manager-agent-Replace.Replace.run.app/a2a/task_manager_agent",
+    "capabilities": {},
+    "version": "1.0.0"
+}

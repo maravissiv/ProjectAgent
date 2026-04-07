@@ -1,0 +1,6 @@
+mcp
+pg8000
+python-dotenv
+starlette
+anyio
+uvicorn
