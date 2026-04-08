@@ -15,7 +15,8 @@ graph TD
     Orchestrator -- A2A --> NotesAgent["Notes Agent\n:8003"]
 
     TaskAgent -- MCP --> MCP["Task Manager MCP\n:8010"]
-    MCP --> AlloyDB[("AlloyDB + AI")]
+    MCP --> AlloyDB[("AlloyDB + AI\n(primary)")]
+    MCP --> FirestoreTasks[("Firestore + Gemini\n(fallback)")]
     CalendarAgent --> Firestore[("Firestore")]
     NotesAgent --> GCS[("Cloud Storage\n(GCS)")]
 
@@ -24,6 +25,7 @@ graph TD
     style CalendarAgent fill:#FBBC04,color:#000
     style NotesAgent fill:#34A853,color:#fff
     style MCP fill:#EA4335,color:#fff
+    style FirestoreTasks fill:#EA4335,color:#fff,stroke-dasharray: 5 5
 ```
 
 ## Agents
@@ -34,4 +36,4 @@ graph TD
 | **Task Manager Agent** | 8001 | Manages tasks (CRUD, semantic search, smart filtering, summaries) by connecting to the Task Manager MCP Server. |
 | **Calendar Agent** | 8002 | Schedule management agent backed by Firestore. Supports creating, listing, searching, and updating events, plus free-slot detection. Pre-seeded with demo data. |
 | **Notes Agent** | 8003 | Markdown note management agent backed by Google Cloud Storage. Supports saving, reading, listing, and searching notes. |
-| **Task Manager MCP** | 8010 | MCP server (Streamable HTTP) backed by AlloyDB. Exposes task CRUD plus AlloyDB AI tools (vector search, smart filter, summary generation). |
+| **Task Manager MCP** | 8010 | MCP server (Streamable HTTP) with **dual-backend** support. Tries AlloyDB at startup; falls back to Firestore + Gemini API if unreachable. Exposes task CRUD plus AI tools (vector search, smart filter, summary generation). |

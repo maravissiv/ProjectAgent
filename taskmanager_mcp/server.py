@@ -1,7 +1,11 @@
 """Task Manager MCP Server — Streamable HTTP transport.
 
-A custom-built MCP server backed by AlloyDB with AI capabilities.
-Exposes 7 tools: CRUD (create, list, update, delete) + AlloyDB AI
+A custom-built MCP server with AI capabilities. Supports two backends:
+  - AlloyDB (primary) — uses AlloyDB AI for embeddings, ai.if(), ai.generate()
+  - Firestore + Gemini API (fallback) — used when AlloyDB is unreachable
+
+Backend is selected automatically at startup (see backend.py).
+Exposes 7 tools: CRUD (create, list, update, delete) + AI
 (semantic_search, smart_filter, generate_summary).
 
 Run:
@@ -33,7 +37,7 @@ from starlette.types import Receive, Scope, Send
 
 # Add parent directory to path so we can import db module
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from db import (
+from backend import (
     create_task, list_tasks, update_task, delete_task,
     semantic_search_tasks, smart_filter_tasks, generate_task_summary,
 )
