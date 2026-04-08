@@ -33,6 +33,8 @@ server.py           ← MCP server (imports from backend.py)
 
 ## Environment Variables
 
+If alloydb is not there, remove the env var `ALLOYDB_PASSWORD` , so system does not waste time in attempting a connection.
+
 ```bash
 # AlloyDB connection (primary — used if reachable)
 ALLOYDB_HOST=YourAlloyDBHostHere
